@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="39bfc540-4819-4d6b-96a8-1ee29cab3515" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="39bfc540-4819-4d6b-96a8-1ee29cab3515" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -276,7 +274,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1570989302844" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1570989507902" />
     <property name="restartRequiresConfirmation" value="false" />
   </component>
   <component name="RecentsManager">
@@ -327,12 +325,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1570236998400</updated>
-      <workItem from="1570237000685" duration="52131000" />
+      <workItem from="1570237000685" duration="52471000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="52131000" />
+    <option name="totallyTimeSpent" value="52471000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="954" extended-state="0" />
@@ -350,7 +348,7 @@
       <window_info anchor="bottom" id="SonarLint" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="4" />
       <window_info anchor="bottom" id="Version Control" order="5" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="6" visible="true" weight="0.32896304" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="6" visible="true" weight="0.318236" />
       <window_info anchor="bottom" id="Message" order="7" />
       <window_info anchor="bottom" id="Find" order="8" />
       <window_info anchor="bottom" id="Run" order="9" weight="0.25625744" />
