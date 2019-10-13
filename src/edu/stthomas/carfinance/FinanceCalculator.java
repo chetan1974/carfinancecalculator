@@ -24,8 +24,6 @@ public class FinanceCalculator implements FinanceCalculatorIfc {
         annualInterestRate = annualInterestRate / (12 * 100);
         double paymentAmount = (loanAmount) * (annualInterestRate * Math.pow(1 + annualInterestRate, numberOfPayments))
                 /(Math.pow(1 + annualInterestRate, numberOfPayments) - 1);
-
-//        double paymentAmount = loanAmount*((1+annualInterestRate/100)*(1+annualInterestRate/100)*(1+annualInterestRate/100));
         return paymentAmount;
     }
 
@@ -36,7 +34,6 @@ public class FinanceCalculator implements FinanceCalculatorIfc {
      * @param paymentAmount
      * @return
      * https://www.calculatorsoup.com/calculators/financial/compound-interest-calculator.php
-     * compound interest rate: https://www.geeksforgeeks.org/java-program-for-compound-interest/
      */
     @Override
     public float calculate(double loanAmount, int numberOfPayments, double paymentAmount){

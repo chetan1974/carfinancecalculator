@@ -20,13 +20,6 @@ public class ValidationService {
      * @param rawInput
      * @return validationObject
      */
-//    public ValidationObject convertInput(RawInput rawInput) {
-//        ValidationObject validationObject = new ValidationObject();
-//        //check all the inputs..if valid return status success or else retuen fail
-//        return validationObject;
-//    }
-
-//    public List<String> validate(RawInput rawInput) {
     public FinanceCalculatorRequest validate(RawInput rawInput) {
 
         //check and convert to FinanceCalculatorRequest object.
@@ -90,10 +83,6 @@ public class ValidationService {
             System.out.println("Only one variable should contain "+ EMPTY + " value");
         }
 
-//        return errorMsgs;
-//        FinanceCalculatorRequest financeCalculatorRequest = new FinanceCalculatorRequest(Double.parseDouble(rawLoanAmount),
-//                Double.parseDouble(rawPaymentAmount), Float.valueOf(rawAnnualInterestRate), Integer.valueOf(rawNumberOfPayments),
-//                calculateAttribute);
         return financeCalculatorRequest;
     }
 

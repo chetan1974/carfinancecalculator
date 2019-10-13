@@ -12,11 +12,9 @@ public class Main {
         System.out.println("Enter loan amount");
 
         String loanAmount = myObj.nextLine();  // Read user input
-//        System.out.println("Enter loan amount is: " + loanAmount);  // Output user input
 
         System.out.println("Enter payment amount");
         String paymentAmount = myObj.nextLine();  // Read user input
-//        System.out.println("Enter payment amount is: " + paymentAmount);  // Output user input
 
         System.out.println("Annual interest rate");  // Output user input
         String annualInterestRate = myObj.nextLine();  // Read user input

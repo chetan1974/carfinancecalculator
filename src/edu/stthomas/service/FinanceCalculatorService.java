@@ -47,21 +47,6 @@ public class FinanceCalculatorService {
                 break;
         }
 
-
-        //status plus error messages
-
-//        if (financeCalculatorResponse.getStatus().equals(Status.SUCCESS)) {
-            //if valid.. calculate.
-//            financeCalculator.calculate()
-//        }
         return  financeCalculatorResponse;
-    }
-
-    private FinanceCalculatorResponse calculate(FinanceCalculatorRequest financeCalculatorRequest) {
-        FinanceCalculatorResponse financeCalculatorResponse = new FinanceCalculatorResponse();
-
-        //at this point all variables are good to calculate unknaown variable.
-        //loan amount  = number of payments * payment amount plus annual interest rate
-        return financeCalculatorResponse;
     }
 }
