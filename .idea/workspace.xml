@@ -1,22 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="39bfc540-4819-4d6b-96a8-1ee29cab3515" name="Default Changelist" comment="">
+    <list default="true" id="39bfc540-4819-4d6b-96a8-1ee29cab3515" name="Default Changelist" comment="Initial working code">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CarFinanceCalculator/edu/stthomas/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CarFinanceCalculator/edu/stthomas/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CarFinanceCalculator/edu/stthomas/carfinance/FinanceCalculator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CarFinanceCalculator/edu/stthomas/carfinance/FinanceCalculator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CarFinanceCalculator/edu/stthomas/enums/Attrbutes.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CarFinanceCalculator/edu/stthomas/model/Errors.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CarFinanceCalculator/edu/stthomas/model/Errors.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CarFinanceCalculator/edu/stthomas/model/FinanceCalculatorRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CarFinanceCalculator/edu/stthomas/model/FinanceCalculatorRequest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CarFinanceCalculator/edu/stthomas/service/FinanceCalculatorService$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CarFinanceCalculator/edu/stthomas/service/FinanceCalculatorService$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CarFinanceCalculator/edu/stthomas/service/FinanceCalculatorService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CarFinanceCalculator/edu/stthomas/service/FinanceCalculatorService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CarFinanceCalculator/edu/stthomas/util/ValidationService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CarFinanceCalculator/edu/stthomas/util/ValidationService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/stthomas/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/stthomas/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/stthomas/carfinance/FinanceCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/stthomas/carfinance/FinanceCalculator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/stthomas/enums/Attrbutes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/stthomas/enums/Attributes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/stthomas/model/FinanceCalculatorRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/stthomas/model/FinanceCalculatorRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/stthomas/service/FinanceCalculatorService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/stthomas/service/FinanceCalculatorService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/stthomas/util/ValidationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/stthomas/util/ValidationService.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -27,16 +13,25 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/edu/stthomas/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="467">
-              <caret line="134" lean-forward="true" selection-start-line="134" selection-end-line="134" />
+            <state relative-caret-position="268">
+              <caret line="127" column="13" selection-start-line="127" selection-start-column="13" selection-end-line="127" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#165#166#0" expanded="true" />
                 <element signature="e#188#189#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="375">
+              <caret line="25" column="4" lean-forward="true" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="4" />
             </state>
           </provider>
         </entry>
@@ -210,6 +205,7 @@
         <option value="$PROJECT_DIR$/src/edu/stthomas/enums/Attributes.java" />
         <option value="$PROJECT_DIR$/src/edu/stthomas/carfinance/FinanceCalculator.java" />
         <option value="$PROJECT_DIR$/src/edu/stthomas/Main.java" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -232,6 +228,11 @@
             <path>
               <item name="CarFinanceCalculator" type="b2602c69:ProjectViewProjectNode" />
               <item name="CarFinanceCalculator" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CarFinanceCalculator" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CarFinanceCalculator" type="462c0819:PsiDirectoryNode" />
+              <item name=".idea" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="CarFinanceCalculator" type="b2602c69:ProjectViewProjectNode" />
@@ -301,7 +302,7 @@
     <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1571014174406" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1571014903784" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="restartRequiresConfirmation" value="false" />
   </component>
@@ -353,7 +354,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1570236998400</updated>
-      <workItem from="1570237000685" duration="67972000" />
+      <workItem from="1570237000685" duration="68715000" />
     </task>
     <task id="LOCAL-00001" summary="wip">
       <created>1570989547904</created>
@@ -376,11 +377,25 @@
       <option name="project" value="LOCAL" />
       <updated>1570989846305</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Initial working code">
+      <created>1571014196164</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1571014196164</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Initial working code">
+      <created>1571014816182</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1571014816182</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="67972000" />
+    <option name="totallyTimeSpent" value="68715000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="954" extended-state="0" />
@@ -391,7 +406,7 @@
       <window_info id="UI Designer" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Designer" order="4" />
-      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.14774115" />
+      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.14774115" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="0" />
       <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.50061053" side_tool="true" weight="0.20381406" />
@@ -399,10 +414,10 @@
       <window_info anchor="bottom" id="SonarLint" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="4" />
       <window_info anchor="bottom" id="Version Control" order="5" />
-      <window_info anchor="bottom" id="Terminal" order="6" sideWeight="0.7258852" weight="0.318236" />
+      <window_info anchor="bottom" id="Terminal" order="6" sideWeight="0.7258852" visible="true" weight="0.318236" />
       <window_info anchor="bottom" id="Message" order="7" />
       <window_info anchor="bottom" id="Find" order="8" weight="0.32896304" />
-      <window_info active="true" anchor="bottom" id="Run" order="9" sideWeight="0.4993895" visible="true" weight="0.20619786" />
+      <window_info anchor="bottom" id="Run" order="9" sideWeight="0.4993895" weight="0.20619786" />
       <window_info anchor="bottom" id="Debug" order="10" weight="0.39928487" />
       <window_info anchor="bottom" id="Cvs" order="11" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="12" weight="0.4" />
@@ -425,7 +440,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="wip" />
     <MESSAGE value="clean up comments" />
-    <option name="LAST_COMMIT_MESSAGE" value="clean up comments" />
+    <MESSAGE value="Initial working code" />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial working code" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -667,13 +683,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/stthomas/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="467">
-          <caret line="134" lean-forward="true" selection-start-line="134" selection-end-line="134" />
+        <state relative-caret-position="268">
+          <caret line="127" column="13" selection-start-line="127" selection-start-column="13" selection-end-line="127" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#165#166#0" expanded="true" />
             <element signature="e#188#189#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="4" lean-forward="true" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="4" />
         </state>
       </provider>
     </entry>
