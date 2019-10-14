@@ -1,24 +1,54 @@
 package edu.stthomas.model;
 
-import edu.stthomas.enums.Attrbutes;
+import edu.stthomas.enums.Attributes;
 
 public class FinanceCalculatorRequest {
     private double loanAmount;
     private double paymentAmount;
     private float  annualInterestRate;
     private int numberOfPayments;
-    private Attrbutes calculateAttribute;
+    private Attributes calculateAttribute;
 
     public FinanceCalculatorRequest() {}
 
 
-    public FinanceCalculatorRequest(double loanAmount, double paymentAmount, float annualInterestRate, int numberOfPayments, Attrbutes calculateAttribute) {
+    public FinanceCalculatorRequest(double loanAmount, double paymentAmount, float annualInterestRate, int numberOfPayments, Attributes calculateAttribute) {
         this.loanAmount = loanAmount;
         this.paymentAmount = paymentAmount;
         this.annualInterestRate = annualInterestRate;
         this.numberOfPayments = numberOfPayments;
         this.annualInterestRate = annualInterestRate;
     }
+
+    /**
+     * calculate monthly payment
+     * @param loanAmount
+     * @param annualInterestRate
+     * @param numberOfPayments
+     */
+    public FinanceCalculatorRequest(double loanAmount, float annualInterestRate, int numberOfPayments) {
+        this.loanAmount = loanAmount;
+        this.annualInterestRate = annualInterestRate;
+        this.numberOfPayments = numberOfPayments;
+        this.annualInterestRate = annualInterestRate;
+        this.calculateAttribute = Attributes.MONTHLY_AMT;
+    }
+
+
+    /**
+     * calculate ANNUAL_RATE
+     * @param loanAmount
+     * @param paymentAmount
+     * @param numberOfPayments
+     */
+    public FinanceCalculatorRequest(double loanAmount, double paymentAmount, int numberOfPayments) {
+        this.loanAmount = loanAmount;
+        this.annualInterestRate = annualInterestRate;
+        this.numberOfPayments = numberOfPayments;
+        this.paymentAmount = paymentAmount;
+        this.calculateAttribute = Attributes.MONTHLY_AMT;
+    }
+
 
     public void setLoanAmount(double loanAmount) {
         this.loanAmount = loanAmount;
@@ -36,7 +66,7 @@ public class FinanceCalculatorRequest {
         this.numberOfPayments = numberOfPayments;
     }
 
-    public void setCalculateAttribute(Attrbutes calculateAttribute) {
+    public void setCalculateAttribute(Attributes calculateAttribute) {
         this.calculateAttribute = calculateAttribute;
     }
 
@@ -56,7 +86,7 @@ public class FinanceCalculatorRequest {
         return numberOfPayments;
     }
 
-    public Attrbutes getCalculateAttribute() {
+    public Attributes getCalculateAttribute() {
         return calculateAttribute;
     }
 

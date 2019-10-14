@@ -10,6 +10,9 @@ public class FinanceCalculatorService {
     RawInput rawInput;
     FinanceCalculator financeCalculator = new FinanceCalculator();
 
+    public FinanceCalculatorService() {
+    }
+
     public FinanceCalculatorService(RawInput rawInput) {
         this.rawInput = rawInput;
     }
@@ -27,17 +30,17 @@ public class FinanceCalculatorService {
                         financeCalculatorRequest.getPaymentAmount());
                 System.out.println("loan amount is: " +loanAmount);
                 break;
-            case NUMBER_OF_PAYMENTS:
+            case NUM_OF_PAYS:
                 int numberOfPayments = financeCalculator.calculate(financeCalculatorRequest.getLoanAmount(), financeCalculatorRequest.getAnnualInterestRate(),
                         financeCalculatorRequest.getPaymentAmount());
                 System.out.println("loan number of payments are: " +numberOfPayments);
                 break;
-            case ANNUAL_INTEREST_RATE:
+            case ANNUAL_RATE:
                 float annualInterestRate = financeCalculator.calculate(financeCalculatorRequest.getLoanAmount(), financeCalculatorRequest.getNumberOFPayments(),
                         financeCalculatorRequest.getPaymentAmount());
                 System.out.println("loan annual interest rate are: " +annualInterestRate);
                 break;
-            case PAYMENT_AMOUNT:
+            case MONTHLY_AMT:
                 double paymentAmount  = financeCalculator.calculate(financeCalculatorRequest.getLoanAmount(), financeCalculatorRequest.getNumberOFPayments(),
                         financeCalculatorRequest.getAnnualInterestRate());
                 System.out.println("loan payment amount is: " +paymentAmount);

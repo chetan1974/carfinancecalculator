@@ -1,6 +1,6 @@
 package edu.stthomas.util;
 
-import edu.stthomas.enums.Attrbutes;
+import edu.stthomas.enums.Attributes;
 import edu.stthomas.model.FinanceCalculatorRequest;
 import edu.stthomas.model.RawInput;
 
@@ -29,12 +29,12 @@ public class ValidationService {
         String rawPaymentAmount = rawInput.getPaymentAmount();
 
         FinanceCalculatorRequest financeCalculatorRequest = new FinanceCalculatorRequest();
-        financeCalculatorRequest.setCalculateAttribute(Attrbutes.NONE);
+        financeCalculatorRequest.setCalculateAttribute(Attributes.NONE);
         int emptyCount = 0;
         if(rawLoanAmount.equals(EMPTY)) {
             emptyCount++;
             financeCalculatorRequest.setLoanAmount(0);
-            financeCalculatorRequest.setCalculateAttribute(Attrbutes.LOAN_AMOUNT);
+            financeCalculatorRequest.setCalculateAttribute(Attributes.LOAN_AMOUNT);
         } else {
             financeCalculatorRequest.setLoanAmount(Double.valueOf(rawLoanAmount));
         }
@@ -42,7 +42,7 @@ public class ValidationService {
         if(rawNumberOfPayments.equals(EMPTY)) {
             emptyCount++;
             financeCalculatorRequest.setNumberOfPayments(0);
-            financeCalculatorRequest.setCalculateAttribute(Attrbutes.NUMBER_OF_PAYMENTS);
+            financeCalculatorRequest.setCalculateAttribute(Attributes.NUM_OF_PAYS);
         }else {
             Integer numberOfPayments = Integer.valueOf(rawNumberOfPayments);
             if((2 > numberOfPayments) || (numberOfPayments > 72)) {
@@ -53,7 +53,7 @@ public class ValidationService {
 
         if(rawAnnualInterestRate.equals(EMPTY)) {
             emptyCount++;
-            financeCalculatorRequest.setCalculateAttribute(Attrbutes.ANNUAL_INTEREST_RATE);
+            financeCalculatorRequest.setCalculateAttribute(Attributes.ANNUAL_RATE);
         } else {
             float annualInterestRate = Float.valueOf(rawAnnualInterestRate);
             if(annualInterestRate < 0) {
@@ -64,7 +64,7 @@ public class ValidationService {
 
         if(rawPaymentAmount.equals(EMPTY)) {
             emptyCount++;
-            financeCalculatorRequest.setCalculateAttribute(Attrbutes.PAYMENT_AMOUNT);
+            financeCalculatorRequest.setCalculateAttribute(Attributes.MONTHLY_AMT);
         } else {
             Double paymentAmount = Double.valueOf(rawPaymentAmount);
             if(paymentAmount == 0) {
