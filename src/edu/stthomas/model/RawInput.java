@@ -1,5 +1,5 @@
 package edu.stthomas.model;
-
+@Deprecated
 public class RawInput {
     private String loanAmount;
     private String paymentAmount;

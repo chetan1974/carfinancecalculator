@@ -5,7 +5,7 @@ import edu.stthomas.model.FinanceCalculatorRequest;
 import edu.stthomas.model.FinanceCalculatorResponse;
 import edu.stthomas.model.RawInput;
 import edu.stthomas.util.ValidationService;
-
+@Deprecated
 public class FinanceCalculatorService {
     RawInput rawInput;
     FinanceCalculator financeCalculator = new FinanceCalculator();

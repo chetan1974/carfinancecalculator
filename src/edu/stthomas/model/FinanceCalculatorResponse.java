@@ -4,7 +4,7 @@ import edu.stthomas.enums.Status;
 
 import java.util.ArrayList;
 import java.util.List;
-
+@Deprecated
 public class FinanceCalculatorResponse {
     private double loanAmount;
     private double paymentAmount;

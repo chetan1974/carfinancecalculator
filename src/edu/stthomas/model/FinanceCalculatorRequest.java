@@ -1,7 +1,7 @@
 package edu.stthomas.model;
 
 import edu.stthomas.enums.Attributes;
-
+@Deprecated()
 public class FinanceCalculatorRequest {
     private double loanAmount;
     private double paymentAmount;

@@ -10,12 +10,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
+@Deprecated
 public class ValidationService {
     final String EMPTY = " ";
     List<String> errorMsgs = new ArrayList<>();
 
     /**
-     * converts raw inouts, validates and returns a FinanceCalculatorRequest only when all the input is valid for further
+     * converts raw inputs, validates and returns a FinanceCalculatorRequest only when all the input is valid for further
      * calculations.
      * @param rawInput
      * @return validationObject

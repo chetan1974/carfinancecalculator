@@ -6,6 +6,7 @@ import java.util.List;
 /**
  * Class holding information about errors.
  */
+@Deprecated
 public class Errors {
    private List<String> errors = new ArrayList();
 

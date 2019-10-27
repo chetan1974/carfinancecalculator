@@ -48,10 +48,13 @@ public class FinanceCalculator implements FinanceCalculatorIfc {
      */
     @Override
     public float calculate(double loanAmount, int numberOfPayments, double paymentAmount){
-        float annualInterestRate = (float) ((loanAmount / paymentAmount) * (12.00/numberOfPayments));
-        Record record = new Record(Attributes.ANNUAL_RATE, loanAmount, paymentAmount,annualInterestRate, numberOfPayments );
+        double totalPayment = paymentAmount * numberOfPayments;
+        double interestPaid = totalPayment - loanAmount;
+        float apr = (float) ((interestPaid * numberOfPayments) / loanAmount);
+
+        Record record = new Record(Attributes.ANNUAL_RATE, loanAmount, paymentAmount,apr, numberOfPayments );
         records.add(record);
-        return annualInterestRate;
+        return apr;
     }
 
     /**
@@ -64,6 +67,15 @@ public class FinanceCalculator implements FinanceCalculatorIfc {
     @Override
     public int calculate(double loanAmount, float annualInterestRate, double paymentAmount){
         int numberOfPayments  =  (int) ((annualInterestRate / paymentAmount ) * loanAmount);
+        double intRatePerMonth = 4.5/(12*100);
+        double loanAmountToPaymentAmountInterest = (loanAmount / paymentAmount)* intRatePerMonth;
+
+        double subfrom1 = 1- loanAmountToPaymentAmountInterest;
+        double intRatePerMonthplus1 = 1.0 +intRatePerMonth;
+        double logsubfrom1 = Math.abs(Math.log(subfrom1));
+        double logintRatePerMonthplus1 = Math.log(intRatePerMonthplus1);
+        numberOfPayments = (int) (logsubfrom1/logintRatePerMonthplus1);
+
         Record record = new Record(Attributes.NUM_OF_PAYS, loanAmount, paymentAmount,annualInterestRate, numberOfPayments );
         records.add(record);
         return numberOfPayments;

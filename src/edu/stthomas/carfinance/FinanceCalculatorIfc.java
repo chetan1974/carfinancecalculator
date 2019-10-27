@@ -13,21 +13,21 @@ public interface FinanceCalculatorIfc {
 
     /**
      * Calculate annual interest rate.
-     * @param loanAmout
+     * @param loanAmount
      * @param numberOfPayments
      * @param paymentAmount
      * @return
      */
-    float calculate(double loanAmout, int numberOfPayments, double paymentAmount);
+    float calculate(double loanAmount, int numberOfPayments, double paymentAmount);
 
     /**
      * Calculate number of payments.
-     * @param loanAmout
+     * @param loanAmount
      * @param annualInterestRate
      * @param paymentAmount
      * @return
      */
-    int calculate(double loanAmout, float annualInterestRate, double paymentAmount);
+    int calculate(double loanAmount, float annualInterestRate, double paymentAmount);
 
     /**
      * Calculate loan amount.
