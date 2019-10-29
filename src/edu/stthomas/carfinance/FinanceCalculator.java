@@ -30,9 +30,9 @@ public class FinanceCalculator implements FinanceCalculatorIfc {
      */
     @Override
     public double calculate(double loanAmount, int numberOfPayments, float annualInterestRate){
-        annualInterestRate = annualInterestRate / (12 * 100);
-        double paymentAmount = (loanAmount) * (annualInterestRate * Math.pow(1 + annualInterestRate, numberOfPayments))
-                /(Math.pow(1 + annualInterestRate, numberOfPayments) - 1);
+        float monthlyInterestRate = annualInterestRate / (12 * 100);
+        double paymentAmount = (loanAmount) * (monthlyInterestRate * Math.pow(1 + monthlyInterestRate, numberOfPayments))
+                /(Math.pow(1 + monthlyInterestRate, numberOfPayments) - 1);
         Record record = new Record(Attributes.MONTHLY_AMT, loanAmount, paymentAmount,annualInterestRate, numberOfPayments );
         records.add(record);
         return paymentAmount;
