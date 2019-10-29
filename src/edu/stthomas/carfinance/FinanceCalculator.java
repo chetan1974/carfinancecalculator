@@ -66,15 +66,11 @@ public class FinanceCalculator implements FinanceCalculatorIfc {
      */
     @Override
     public int calculate(double loanAmount, float annualInterestRate, double paymentAmount){
-        int numberOfPayments  =  (int) ((annualInterestRate / paymentAmount ) * loanAmount);
-        double intRatePerMonth = 4.5/(12*100);
-        double loanAmountToPaymentAmountInterest = (loanAmount / paymentAmount)* intRatePerMonth;
-
-        double subfrom1 = 1- loanAmountToPaymentAmountInterest;
-        double intRatePerMonthplus1 = 1.0 +intRatePerMonth;
-        double logsubfrom1 = Math.abs(Math.log(subfrom1));
-        double logintRatePerMonthplus1 = Math.log(intRatePerMonthplus1);
-        numberOfPayments = (int) (logsubfrom1/logintRatePerMonthplus1);
+        double intRatePerMonth = annualInterestRate/(12*100); //0.00375
+        double paymentAmtByloanAmtByIntRate = paymentAmount/(loanAmount*intRatePerMonth); //6.081
+        double onePlusRate = 1+intRatePerMonth; //1 + 0.00375 = 1.00375
+        double step1 = paymentAmtByloanAmtByIntRate/(paymentAmtByloanAmtByIntRate-1); //6.081 / (6.081-1)=1.2
+        int numberOfPayments = (int)( Math.log(step1)/Math.log(onePlusRate));
 
         Record record = new Record(Attributes.NUM_OF_PAYS, loanAmount, paymentAmount,annualInterestRate, numberOfPayments );
         records.add(record);
