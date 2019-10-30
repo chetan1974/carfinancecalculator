@@ -41,6 +41,7 @@ public class FinanceCalculator implements FinanceCalculatorIfc {
      */
     @Override
     public float calculate(double loanAmount, int numberOfPayments, double paymentAmount){
+        Long startTime  = System.currentTimeMillis();
         float apr = 1.0f;
         double calculatedPaymentAmount = -1.0;
 
@@ -56,14 +57,17 @@ public class FinanceCalculator implements FinanceCalculatorIfc {
                     increment = true;
                     apr += 0.01;
                 }
-                System.out.println("APR:"+apr);
                 //avoid indefinite loop if diff between calculatedPaymentAmount and paymentAmount is always greater than 1.
                 if(decrement && increment) {
                     break;
                 }
         }
+        Long endTime = System.currentTimeMillis();
+        System.out.println("Time for calculating APR:" +(endTime - startTime) +" millis");
+
         Record record = new Record(Attributes.ANNUAL_RATE, loanAmount, paymentAmount,apr, numberOfPayments );
         records.add(record);
+
         return apr;
     }
 
