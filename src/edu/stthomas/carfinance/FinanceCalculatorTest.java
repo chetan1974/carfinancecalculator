@@ -25,6 +25,13 @@ public class FinanceCalculatorTest {
         assertEquals(4.5,apr,0.1f);
     }
 
+
+    @Test
+    public void testAPRLowInt() {
+        float apr = financeCalculator.calculate(32500.0, 48, 684.02);
+        assertEquals(0.5,apr,0.1f);
+    }
+
     @Test
     public void testPaymentAmount() {
         double paymentAmount = financeCalculator.calculate(32500.0, 48, 4.5f);

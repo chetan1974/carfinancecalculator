@@ -8,15 +8,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * loanamount,  numberOfPayments    annualInterestRate  paymentAmount
- * double,         int,                float,              double
  *
- * double, int, float
- * double, int, double
- * double, float, double
- * int, float, double
- *
- * Ref: https://www.vertex42.com/ExcelArticles/amortization-calculation.html
+ * Ref formula: https://www.vertex42.com/ExcelArticles/amortization-calculation.html
  */
 public class FinanceCalculator implements FinanceCalculatorIfc {
     private static List<Record>  records = new ArrayList<>();
@@ -48,10 +41,27 @@ public class FinanceCalculator implements FinanceCalculatorIfc {
      */
     @Override
     public float calculate(double loanAmount, int numberOfPayments, double paymentAmount){
-        double totalPayment = paymentAmount * numberOfPayments;
-        double interestPaid = totalPayment - loanAmount;
-        float apr = (float) ((interestPaid * numberOfPayments) / loanAmount);
+        float apr = 1.0f;
+        double calculatedPaymentAmount = -1.0;
 
+        //use recursion to get closer to the payment amount.
+        boolean decrement = false;
+        boolean increment = false;
+        while(Math.abs(paymentAmount - calculatedPaymentAmount) > 1.0) {
+            calculatedPaymentAmount = calculate(loanAmount, numberOfPayments, apr);
+                if (calculatedPaymentAmount > paymentAmount) {
+                    decrement = true;
+                    apr -= 0.01;
+                } else {
+                    increment = true;
+                    apr += 0.01;
+                }
+                System.out.println("APR:"+apr);
+                //avoid indefinite loop if diff between calculatedPaymentAmount and paymentAmount is always greater than 1.
+                if(decrement && increment) {
+                    break;
+                }
+        }
         Record record = new Record(Attributes.ANNUAL_RATE, loanAmount, paymentAmount,apr, numberOfPayments );
         records.add(record);
         return apr;
