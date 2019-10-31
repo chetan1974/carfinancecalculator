@@ -30,7 +30,7 @@ public class FinanceCalculatorService {
                         financeCalculatorRequest.getPaymentAmount());
                 System.out.println("loan amount is: " +loanAmount);
                 break;
-            case NUM_OF_PAYS:
+            case NUM_OF_MTHS:
                 int numberOfPayments = financeCalculator.calculate(financeCalculatorRequest.getLoanAmount(), financeCalculatorRequest.getAnnualInterestRate(),
                         financeCalculatorRequest.getPaymentAmount());
                 System.out.println("loan number of payments are: " +numberOfPayments);

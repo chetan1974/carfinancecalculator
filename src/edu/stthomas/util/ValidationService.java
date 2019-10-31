@@ -43,7 +43,7 @@ public class ValidationService {
         if(rawNumberOfPayments.equals(EMPTY)) {
             emptyCount++;
             financeCalculatorRequest.setNumberOfPayments(0);
-            financeCalculatorRequest.setCalculateAttribute(Attributes.NUM_OF_PAYS);
+            financeCalculatorRequest.setCalculateAttribute(Attributes.NUM_OF_MTHS);
         }else {
             Integer numberOfPayments = Integer.valueOf(rawNumberOfPayments);
             if((2 > numberOfPayments) || (numberOfPayments > 72)) {

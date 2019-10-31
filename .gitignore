@@ -26,3 +26,4 @@ hs_err_pid*
 out/
 *.impl
 *.docx
+*.impl
