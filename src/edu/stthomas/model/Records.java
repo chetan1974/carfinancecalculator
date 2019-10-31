@@ -1,17 +1,19 @@
 package edu.stthomas.model;
 
+import edu.stthomas.enums.Attributes;
+
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Data class to hold records
+ * Data class to hold records.
  */
 public class Records {
-    private List<Record> records = new ArrayList<Record>();
+    private List<Record> records = new ArrayList<>();
 
-    public void add(Record record) {
-        records.add(record);
+    public void add(Attributes attribute, double principalAmt, double monthlyAmt, float intRate, int numOfMonths) {
+        records.add(new Record(attribute, principalAmt, monthlyAmt, intRate, numOfMonths));
     }
 
 

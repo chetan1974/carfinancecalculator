@@ -34,7 +34,6 @@ public class FinanceCalculatorTest {
         assertEquals(48,numberOfPayments);
     }
 
-
     @Test
     public void intRate() {
         float apr = financeCalculator.calculate(32500.0, 48, 741.26);

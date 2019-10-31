@@ -2,7 +2,6 @@ package edu.stthomas.client;
 
 import edu.stthomas.carfinance.FinanceCalculator;
 import edu.stthomas.enums.Attributes;
-import edu.stthomas.model.Record;
 import edu.stthomas.model.Records;
 
 import java.util.Scanner;
@@ -23,7 +22,7 @@ public class Client {
                     double principalAmt = getPrincipal(myObj);
                     double monthlyAmt = financeCalculator.calculate(principalAmt, numOfMonths, intRate);
                     System.out.println("Loan payment amount is: " + monthlyAmt);
-                    records.add(new Record(Attributes.MONTHLY_AMT, principalAmt, monthlyAmt, intRate, numOfMonths));
+                    records.add(Attributes.MONTHLY_AMT, principalAmt, monthlyAmt, intRate, numOfMonths);
                     break;
 
                 case "2": //calculate Int Rate
@@ -32,7 +31,7 @@ public class Client {
                     principalAmt = getPrincipal(myObj);
                     intRate = financeCalculator.calculate(principalAmt, numOfMonths, monthlyAmt);
                     System.out.println("Interest rate is: " + intRate);
-                    records.add(new Record(Attributes.ANNUAL_RATE, principalAmt, monthlyAmt, intRate, numOfMonths));
+                    records.add(Attributes.ANNUAL_RATE, principalAmt, monthlyAmt, intRate, numOfMonths);
                     break;
 
                 case "3": //calculate Number of Months
@@ -41,7 +40,7 @@ public class Client {
                     intRate = getAnnIntRate(myObj);
                     numOfMonths = financeCalculator.calculate(principalAmt, intRate, monthlyAmt);
                     System.out.println("Number of months: " + numOfMonths);
-                    records.add(new Record(Attributes.NUM_OF_MTHS, principalAmt, monthlyAmt, intRate, numOfMonths));
+                    records.add(Attributes.NUM_OF_MTHS, principalAmt, monthlyAmt, intRate, numOfMonths);
                     break;
 
                 case "4": //calculate principal amount
@@ -50,7 +49,7 @@ public class Client {
                     numOfMonths = getMonths(myObj);
                     principalAmt = financeCalculator.calculate(numOfMonths, intRate, monthlyAmt);
                     System.out.println("Principal amount: " + principalAmt);
-                    records.add(new Record(Attributes.LOAN_AMOUNT, principalAmt, monthlyAmt, intRate, numOfMonths));
+                    records.add(Attributes.LOAN_AMOUNT, principalAmt, monthlyAmt, intRate, numOfMonths);
                     break;
 
                 case "5":
