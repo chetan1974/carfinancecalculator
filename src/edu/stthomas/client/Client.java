@@ -79,8 +79,11 @@ public class Client {
         Float annIntRate = 0.0f;
         try {
             annIntRate = myObj.nextFloat();
+            if(annIntRate <0.0f ){
+                throw new NumberFormatException("Annual interest rate should to be zero or greater.");
+            }
         }catch (Exception e) {
-            throw new NumberFormatException("For Annual Int Rate, please enter a numeric value like: 1 or 1.00.");
+            throw new NumberFormatException("Annual interest rate should to be zero or greater.");
         }
         return annIntRate;
     }

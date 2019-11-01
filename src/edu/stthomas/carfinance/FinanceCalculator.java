@@ -16,6 +16,7 @@ public class FinanceCalculator implements FinanceCalculatorIfc {
     @Override
     public double calculate(double loanAmount, int numberOfPayments, float annualInterestRate){
         float monthlyInterestRate = annualInterestRate / (12 * 100);
+        monthlyInterestRate = monthlyInterestRate>0.00001?monthlyInterestRate:0.00001f;
         double paymentAmount = (loanAmount) * (monthlyInterestRate * Math.pow(1 + monthlyInterestRate, numberOfPayments))
                 /(Math.pow(1 + monthlyInterestRate, numberOfPayments) - 1);
 
