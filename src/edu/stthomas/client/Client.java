@@ -122,8 +122,11 @@ public class Client {
         double paymentAmount = 0;
         try {
             paymentAmount = myObj.nextDouble();
+            if(paymentAmount <= 0) {
+                throw new NumberFormatException("For payment amount, please enter a numeric value greater than 0");
+            }
         }catch (Exception e) {
-            throw new NumberFormatException("For payment amount, please enter a numeric value like: 1 or 1.00.");
+            throw new NumberFormatException("For payment amount, please enter a numeric value greater than 0");
         }
         return paymentAmount;
     }

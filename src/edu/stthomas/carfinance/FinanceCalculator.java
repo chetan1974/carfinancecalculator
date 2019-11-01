@@ -16,9 +16,13 @@ public class FinanceCalculator implements FinanceCalculatorIfc {
     @Override
     public double calculate(double loanAmount, int numberOfPayments, float annualInterestRate){
         float monthlyInterestRate = annualInterestRate / (12 * 100);
-        monthlyInterestRate = monthlyInterestRate>0.00001?monthlyInterestRate:0.00001f;
-        double paymentAmount = (loanAmount) * (monthlyInterestRate * Math.pow(1 + monthlyInterestRate, numberOfPayments))
-                /(Math.pow(1 + monthlyInterestRate, numberOfPayments) - 1);
+        double paymentAmount;
+        if(annualInterestRate == 0f) {
+            paymentAmount = loanAmount/numberOfPayments;
+        } else {
+            paymentAmount = (loanAmount) * (monthlyInterestRate * Math.pow(1 + monthlyInterestRate, numberOfPayments))
+                    / (Math.pow(1 + monthlyInterestRate, numberOfPayments) - 1);
+        }
 
         return paymentAmount;
     }
@@ -64,6 +68,7 @@ public class FinanceCalculator implements FinanceCalculatorIfc {
 
     /**
      * calculate number of payments.
+     * https://www.vertex42.com/ExcelArticles/amortization-calculation.html
      * @param loanAmount
      * @param annualInterestRate
      * @param paymentAmount
@@ -72,8 +77,8 @@ public class FinanceCalculator implements FinanceCalculatorIfc {
     @Override
     public int calculate(double loanAmount, float annualInterestRate, double paymentAmount){
         double intRatePerMonth = annualInterestRate/(12*100); //0.00375
-        double paymentAmtByloanAmtByIntRate = paymentAmount/(loanAmount*intRatePerMonth); //6.081
-        double onePlusRate = 1+intRatePerMonth; //1 + 0.00375 = 1.00375
+        double paymentAmtByloanAmtByIntRate = paymentAmount/(loanAmount*intRatePerMonth); //step 1
+        double onePlusRate = 1 + intRatePerMonth;
         double step1 = paymentAmtByloanAmtByIntRate/(paymentAmtByloanAmtByIntRate-1); //6.081 / (6.081-1)=1.2
         int numberOfPayments = (int)( Math.log(step1)/Math.log(onePlusRate));
 
