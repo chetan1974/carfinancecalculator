@@ -21,7 +21,12 @@ public class Client {
                     int numOfMonths = getMonths(myObj);
                     double principalAmt = getPrincipal(myObj);
                     double monthlyAmt = financeCalculator.calculate(principalAmt, numOfMonths, intRate);
-                    System.out.println("Loan payment amount is: " + monthlyAmt);
+                    if(intRate == 0) {
+                        double lastPayment = monthlyAmt + (principalAmt - (monthlyAmt * numOfMonths));
+                        System.out.println((numOfMonths-1)+" monthly payment amount of: " + monthlyAmt + " with last payment: " + lastPayment);
+                    } else {
+                        System.out.println("Monthly payment amount is: " + monthlyAmt);
+                    }
                     records.add(Attributes.MONTHLY_AMT, principalAmt, monthlyAmt, intRate, numOfMonths);
                     break;
 

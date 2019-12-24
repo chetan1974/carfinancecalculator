@@ -1,5 +1,7 @@
 package edu.stthomas.carfinance;
 
+import edu.stthomas.util.Helper;
+
 /**
  * Calculation service class. Seperation of responsibility of just calculating the required attribute.
  * Ref formula: https://www.vertex42.com/ExcelArticles/amortization-calculation.html
@@ -18,10 +20,14 @@ public class FinanceCalculator implements FinanceCalculatorIfc {
         float monthlyInterestRate = annualInterestRate / (12 * 100);
         double paymentAmount;
         if(annualInterestRate == 0f) {
+            //special case where rate is zero
             paymentAmount = loanAmount/numberOfPayments;
+            paymentAmount = Helper.formatTwoDigit(paymentAmount);
         } else {
-            paymentAmount = (loanAmount) * (monthlyInterestRate * Math.pow(1 + monthlyInterestRate, numberOfPayments))
+            //use normal formula
+            paymentAmount = Helper.roundUp(loanAmount) * (monthlyInterestRate * Math.pow(1 + monthlyInterestRate, numberOfPayments))
                     / (Math.pow(1 + monthlyInterestRate, numberOfPayments) - 1);
+            paymentAmount = Helper.roundUp(paymentAmount);
         }
 
         return paymentAmount;
@@ -39,7 +45,7 @@ public class FinanceCalculator implements FinanceCalculatorIfc {
     @Override
     public float calculate(double loanAmount, int numberOfPayments, double paymentAmount){
         Long startTime  = System.currentTimeMillis();
-        float intRate = 1.0f;
+        float intRate = 0.000f;
         double calculatedPaymentAmount = -1.0;
 
         //use recursion to get closer to the payment amount.
@@ -49,10 +55,10 @@ public class FinanceCalculator implements FinanceCalculatorIfc {
             calculatedPaymentAmount = calculate(loanAmount, numberOfPayments, intRate);
                 if (calculatedPaymentAmount > paymentAmount) {
                     decrement = true;
-                    intRate -= 0.01;
+                    intRate -= 0.0001;
                 } else {
                     increment = true;
-                    intRate += 0.01;
+                    intRate += 0.0001;
                 }
                 //avoid indefinite loop if diff between calculatedPaymentAmount and paymentAmount is always greater than 1.
                 if(decrement && increment) {
@@ -63,7 +69,7 @@ public class FinanceCalculator implements FinanceCalculatorIfc {
         Long endTime = System.currentTimeMillis();
         System.out.println("Time for calculating int rate:" +(endTime - startTime) +" millis");
 
-        return intRate;
+        return (float) Helper.formatTwoDigit(intRate);
     }
 
     /**
